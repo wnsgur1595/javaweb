@@ -1,16 +1,16 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
     <%@ page import="java.util.*" %>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
 <%
-	//DB¸¦ »ç¿ëÇÏÁö ¾Ê°í application Scope¸¦ ÀÌ¿ëÇØ¼­ ¹æ¸í·Ï ½Ã½ºÅÛÀ» ¸¸µé¾ú´Ù.
-	//Post¹æ½ÄÀ¸·Î Url µÚÀÇ parameter¸¦ ¾ø¾Ö°í ½Í¾úÁö¸¸, ¾ÆÁ÷ °øºÎÁßÀÌ´Ù.
+	//DBë¥¼ ì‚¬ìš©í•˜ì§€ ì•Šê³  application Scopeë¥¼ ì´ìš©í•´ì„œ ë°©ëª…ë¡ ì‹œìŠ¤í…œì„ ë§Œë“¤ì—ˆë‹¤.
+	//Postë°©ì‹ìœ¼ë¡œ Url ë’¤ì˜ parameterë¥¼ ì—†ì• ê³  ì‹¶ì—ˆì§€ë§Œ, ì•„ì§ ê³µë¶€ì¤‘ì´ë‹¤.
 	if(application.getAttribute("name") == null && request.getParameter("name") != null){
 		ArrayList<String> arr = new ArrayList<String>();
 		ArrayList<String> arr2 = new ArrayList<String>();
@@ -52,9 +52,9 @@
 		for(int i=0;i<arr1.size();i++){
 %>
 ID : <%=application.getAttribute("id") %><br>
-ÀÌ¸§ : <%=arr1.get(i) %><br>
-³»¿ë : <%=arr2.get(i) %><br>
-³¯Â¥ : <%=arr3.get(i) %><br>
+ì´ë¦„ : <%=arr1.get(i) %><br>
+ë‚´ìš© : <%=arr2.get(i) %><br>
+ë‚ ì§œ : <%=arr3.get(i) %><br>
 <hr><br>
 <%
 		}
@@ -62,9 +62,9 @@ ID : <%=application.getAttribute("id") %><br>
 %>
 
 <form method=post action="Guestbook_Get.jsp">
-ÀÌ¸§ : <input type="text" name="name"><br><br>
-³»¿ë : <textarea rows="5" cols="50" name="content"></textarea><br><br>
-<input type="submit" value="È®ÀÎ"><br><br>
+ì´ë¦„ : <input type="text" name="name"><br><br>
+ë‚´ìš© : <textarea rows="5" cols="50" name="content"></textarea><br><br>
+<input type="submit" value="í™•ì¸"><br><br>
 </form>
 </body>
 </html>
