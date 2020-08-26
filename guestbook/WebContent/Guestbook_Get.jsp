@@ -9,7 +9,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-request.setCharacterEncoding("UTF-8");
+<%
+	request.setCharacterEncoding("UTF-8");
+%>
 <c:redirect url="http://localhost:8080/guestbook/Guestbook_Post.jsp">
 	<c:param name="name" value="${param.name }"/>
 	<c:param name="content" value="${param.content }"/>
