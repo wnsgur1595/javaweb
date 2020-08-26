@@ -14,22 +14,26 @@
 	if(application.getAttribute("name") == null && request.getParameter("name") != null){
 		ArrayList<String> arr = new ArrayList<String>();
 		ArrayList<String> arr2 = new ArrayList<String>();
+		ArrayList<Integer> arr3 = new ArrayList<Integer>();
 		arr.add(request.getParameter("name"));
 		arr2.add((new Date()).toLocaleString());
+		arr3.add(1);
 		application.setAttribute("name", arr);
-		application.setAttribute("id", 1);
+		application.setAttribute("id", arr3);
 		application.setAttribute("date", arr2);
 	}
 	else if(application.getAttribute("name") != null && request.getParameter("name") != null){
 		ArrayList<String> arr = (ArrayList<String>)application.getAttribute("name");
 		ArrayList<String> arr2 = (ArrayList<String>)application.getAttribute("date");
+		ArrayList<Integer> arr3 = (ArrayList<Integer>)application.getAttribute("id");
 		arr.add(request.getParameter("name"));
 		arr2.add((new Date()).toLocaleString());
+		int a = arr3.get(arr3.size()-1);
+		a++;
+		arr3.add(a);
 		application.setAttribute("name", arr);
 		application.setAttribute("date", arr2);
-		int a = (int)application.getAttribute("id");
-		a++;
-		application.setAttribute("id",a);
+		application.setAttribute("id",arr3);
 	}
 
 
@@ -49,9 +53,10 @@
 		ArrayList<String> arr1 = (ArrayList<String>)application.getAttribute("name");
 		ArrayList<String> arr2 = (ArrayList<String>)application.getAttribute("content");
 		ArrayList<String> arr3 = (ArrayList<String>)application.getAttribute("date");
+		ArrayList<Integer> arr4 = (ArrayList<Integer>)application.getAttribute("id");
 		for(int i=0;i<arr1.size();i++){
 %>
-ID : <%=application.getAttribute("id") %><br>
+ID : <%=arr4.get(i) %><br>
 이름 : <%=arr1.get(i) %><br>
 내용 : <%=arr2.get(i) %><br>
 날짜 : <%=arr3.get(i) %><br>
